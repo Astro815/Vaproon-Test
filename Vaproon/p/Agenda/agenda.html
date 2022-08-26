@@ -1,0 +1,36 @@
+<html>
+<link rel="stylesheet" href="./agendaStyle.css">
+<link rel="stylesheet" href="../../css/fontstyle.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<body>
+    <button id="actAddVac" class="bav_false"><on>Cancelar</on><off>Adicionar Vacina</off></button>
+    <div id="FormAddVacina">
+        <input id="nameVacAdd" placeholder="Nome" type="text">
+        <!--<select name="selectVac" id="nameVacAdd" placeholder="Vacina">
+            <option value="CoronaVac">Corona Vac</option>
+            <option value="vacinateste1">Vacina teste 1</option>
+        </select>-->
+        <input id="dataVacAdd" type="date"><br>
+        <span id="dateErro" class="dateErrorfalse">A data marcada já passou.</span>
+        <input id="descVacAdd" placeholder="Descrição (opicional)" type="text"><br>
+        <button id="btnConfirmAddConsulte">Adicionar</button>
+    </div>
+    <hr>
+    <table class="agendVacina">
+        <tr>
+            <th>
+                <p>Vacinas</p>
+            </th>
+        </tr>
+        <tr class="AVagendadas">
+            <td style="padding: 0.5em 0em;">
+                <ul style="padding: 0px;display: flex;flex-direction: column;align-items: center;width: 185%;">
+                </ul>
+            </td>
+        </tr>
+    </table>
+    <script src="../../js/main.js"></script>
+</body>
+
+</html>

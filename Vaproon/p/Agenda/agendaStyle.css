@@ -1,0 +1,183 @@
+/* --- ADICIONAR VACINAS --- */
+
+#actAddVac {
+    width: 100%;
+    height: 3em;
+    padding: 0.3em;
+    box-sizing: border-box;
+    border-radius: 1em;
+    color: #dce2e9;
+    font-size: 18px;
+}
+
+#FormAddVacina {
+    padding: 1em;
+    box-sizing: border-box;
+    margin: 0.5em;
+    border-radius: 1em;
+    border: rgb(76, 76, 76) 3px solid;
+}
+
+#FormAddVacina select {
+    width: 100%;
+    height: 2em;
+    padding-inline: 1em;
+    border-radius: 1em;
+    font-size: larger;
+    margin: 1em 0em;
+}
+
+#btnConfirmAddConsulte {
+    width: 40%;
+    height: 3em;
+    padding: 0.3em;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 1em;
+    color: #dce2e9;
+    font-size: 18px;
+    background-color: rgb(33, 240, 95);
+}
+
+#actAddVac.bav_true {
+    background-color: rgb(240, 74, 33);
+    border: rgb(153, 56, 18) solid 4px;
+}
+
+#actAddVac.bav_true>on {
+    display: block;
+}
+
+#actAddVac.bav_true>off {
+    display: none;
+}
+
+#actAddVac.bav_false>on {
+    display: none;
+}
+
+#actAddVac.bav_false>off {
+    display: block;
+}
+
+#actAddVac.bav_false {
+    border: rgb(18, 153, 90) solid 4px;
+    background-color: rgb(7, 211, 160);
+}
+
+#actAddVac.bav_true+#FormAddVacina {
+    display: block;
+}
+
+#actAddVac.bav_false+#FormAddVacina {
+    display: none;
+}
+
+input {
+    width: 100%;
+    height: 2em;
+    border: rgb(76, 76, 76) 2px solid;
+    border-radius: 1em;
+    padding: 1em;
+    margin-bottom: 1em;
+    font-size: 14pt;
+}
+
+
+/* --- Estilos Agendas --- */
+
+.agendVacina {
+    width: 100%;
+    height: 85%;
+    min-height: 3em;
+    background-color: rgb(61, 75, 75);
+    border-radius: 1em;
+    border-spacing: 0px;
+    /*border: rgb(46, 46, 46) 2px solid;*/
+}
+
+.agendVacina tr th {
+    padding: 0px;
+    width: 100%;
+    height: 1.5em;
+    background-color: white;
+    border-radius: 4em;
+}
+
+.agendVacina li {
+    list-style: none;
+    width: 95%;
+    min-height: 6em;
+    color: black;
+    border-radius: 1em;
+    padding: 1em;
+    box-sizing: border-box;
+    margin-block: 0.2em;
+}
+
+.agendVacina li.tvApliced {
+    background-color: rgb(103, 255, 97);
+    border: solid 4px rgb(76, 190, 48);
+}
+
+.agendVacina li.tvPass {
+    background-color: rgb(255, 127, 127);
+    border: solid 4px rgb(199, 121, 98);
+}
+
+.agendVacina li.tvWaiting {
+    background-color: aquamarine;
+    border: solid 4px rgb(98, 199, 144);
+}
+
+.agendVacina li.tvProximo {
+    background-color: rgb(242, 255, 127);
+    border: solid 4px rgb(199, 197, 98);
+}
+
+.agendVacina li h3 {
+    width: fit-content;
+    float: left;
+}
+
+.agendVacina li p {
+    text-align: end;
+}
+
+.agendVacina li span {
+    max-width: 15ch;
+}
+
+.AVagendadas {
+    display: block;
+    height: 100%;
+    contain: content;
+    overflow-y: scroll;
+}
+
+
+/* --- SLOTS VACINAS --- */
+
+.iconVac {
+    float: left;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.material-icons {
+    margin: 0.1em 0.4em 0em 0em;
+}
+
+.dateErrorfalse {
+    color: red;
+    display: none;
+    margin: 0.2em 0em 0.6em 1em;
+}
+
+.dateErrortrue {
+    color: red;
+    display: flex;
+    margin: 0.2em 0em 0.6em 1em;
+}
