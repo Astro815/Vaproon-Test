@@ -26,7 +26,7 @@ let dataUser = {
     }
 }
 
-if (localStorage.getItem("VPNaccount") != "") {
+if (localStorage.getItem("VPNaccount") != null) {
     dataUser = JSON.parse(localStorage.getItem("VPNaccount"));
 }
 
