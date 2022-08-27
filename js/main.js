@@ -53,7 +53,7 @@ function tickTable() {
     let agTb = document.querySelector(".AVagendadas > td > ul");
     agTb.innerHTML = "";
     for (let index = (dataUser.consultas.length - 1); index > -1; index--) {
-        agTb.innerHTML += "<a class='select' onclick='startSelect(\"" + dataUser.dataCst[dataUser.consultas[index]].id + "\")'><li codeId='" + dataUser.dataCst[dataUser.consultas[index]].id + "' id='vacItem' class='" + checkTimeVacina(dataUser.dataCst[dataUser.consultas[index]].dtNum) + "'><div class='iconVac'><span class='material-icons' style='font-size: 3em;'>" + setIcon(checkTimeVacina(dataUser.dataCst[dataUser.consultas[index]].dtNum)) + "</span></div><div><h3>" + dataUser.dataCst[dataUser.consultas[index]].name + "</h3><p><i>" + dataUser.dataCst[dataUser.consultas[index]].data + "</i></p><br><span>" + dataUser.dataCst[dataUser.consultas[index]].desc + "</span></div></li>";
+        agTb.innerHTML += "<a class='select' ><li onclick='startSelect(\"" + dataUser.dataCst[dataUser.consultas[index]].id + "\")' codeId='" + dataUser.dataCst[dataUser.consultas[index]].id + "' id='vacItem' class='" + checkTimeVacina(dataUser.dataCst[dataUser.consultas[index]].dtNum) + "'><div class='iconVac'><span class='material-icons' style='font-size: 3em;'>" + setIcon(checkTimeVacina(dataUser.dataCst[dataUser.consultas[index]].dtNum)) + "</span></div><div><h3>" + dataUser.dataCst[dataUser.consultas[index]].name + "</h3><p><i>" + dataUser.dataCst[dataUser.consultas[index]].data + "</i></p><br><span>" + dataUser.dataCst[dataUser.consultas[index]].desc + "</span></div></li>";
     }
 }
 
