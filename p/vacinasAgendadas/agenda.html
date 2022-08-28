@@ -1,5 +1,5 @@
 <html>
-<link rel="stylesheet" href="./agendafeita.css">
+<link rel="stylesheet" href="./agendaStyle.css">
 <link rel="stylesheet" href="../../css/fontstyle.css">
 <link rel="stylesheet" href="../../css/colors.css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -15,26 +15,39 @@
                         <span id="SVTXTicon" class="material-icons" class="SVicon" style="font-size: 6em;">event</span>
                     </td>
                     <td>
-                        <h3 id="SVTXTname">[Nome]</h3><br>
-                        <p id="SVTXTdesc">[Descrição]</p>
+                        <h3 id="SVTXTname">Nome</h3><br>
+                        <p id="SVTXTdesc">Descrição nhenhenhenhe</p>
                     </td>
                 </tr>
                 <tr class="SVbtn">
-                    <td id="SVTXTdata">[data]</td>
+                    <td id="SVTXTdata">sgfgsfdgfd</td>
                 </tr>
                 <tr>
                     <td colspan="2">
                         <button onclick="delVacina()" id="SVBremove" class="SVBremove" style="float: left;">Remover</button>
-                        <button onclick="resVacina()" id="SVBapply" class="SVBapply">Restaurar</button>
+                        <button onclick="applyVacina()" id="SVBapply" class="SVBapply">Aplicada</button>
                     </td>
                 </tr>
             </table>
         </div>
     </div>
+    <button id="actAddVac" class="bav_false"><on>Cancelar</on><off>Adicionar Vacina</off></button>
+    <div id="FormAddVacina">
+        <input id="nameVacAdd" placeholder="Nome" type="text">
+        <!--<select name="selectVac" id="nameVacAdd" placeholder="Vacina">
+            <option value="CoronaVac">Corona Vac</option>
+            <option value="vacinateste1">Vacina teste 1</option>
+        </select>-->
+        <input id="dataVacAdd" type="date"><br>
+        <span id="dateErro" class="dateErrorfalse">A data marcada já passou.</span>
+        <input id="descVacAdd" placeholder="Descrição (opicional)" type="text"><br>
+        <button id="btnConfirmAddConsulte">Adicionar</button>
+    </div>
+    <hr>
     <table class="vacinaList">
         <tr>
             <th>
-                <p>Vacinas Aplicadas</p>
+                <p>Vacinas</p>
             </th>
         </tr>
         <tr class="vacListSlots">
@@ -45,7 +58,7 @@
         </tr>
     </table>
     <script src="../../js/global.js"></script>
-    <script src="./vacinaTm.js"></script>
+    <script src="./vacinasAg.js"></script>
 </body>
 
 </html>
