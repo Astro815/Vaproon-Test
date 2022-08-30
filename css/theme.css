@@ -1,0 +1,15 @@
+.darkTh.thBg {
+    background-color: rgb(37, 37, 37);
+}
+
+.whiteTh.thBg {
+    background-color: rgb(255, 255, 255);
+}
+
+.darkTh.thTxt {
+    color: rgb(231 231 231);
+}
+
+.whiteTh.thTxt {
+    color: rgb(37, 37, 37);
+}
