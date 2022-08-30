@@ -7,21 +7,6 @@ let _btnActAddVac = qs("#actAddVac");
 
 // FUNÇÕES // 
 
-function addConsuta(name, data, desc, dataNum) {
-    var preid = generateId();
-    dataUser.consultas.push(preid);
-    //Json
-    v = {
-        "name": name,
-        "data": data,
-        "desc": checkDesc(desc),
-        "id": preid,
-        "dtNum": dataNum,
-        "apply": false
-    }
-    dataUser.dataCst[preid] = v;
-}
-
 qs("#btnConfirmAddConsulte").addEventListener("click", function() {
     // Adicionando Vacina
     addConsuta(qs("#nameVacAdd").value, qs("#dataVacAdd").value, qs("#descVacAdd").value, qs("#dataVacAdd").valueAsNumber);

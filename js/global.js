@@ -35,7 +35,6 @@ if (localStorage.getItem("VPNaccount") != null) {
 
 //let selectVac = false;
 const qs = (e) => { return document.querySelector(e); };
-let darkTheme = false;
 let isPag = "null";
 let selectIsActive = false;
 let selectId = null;
@@ -93,12 +92,13 @@ function addConsuta(name, data, desc, dataNum) {
     dataUser.consultas.push(preid);
 
     //Json
-    v = {
+    let v = {
         "name": name,
         "data": data,
         "desc": checkDesc(desc),
         "id": preid,
-        "dtNum": dataNum
+        "dtNum": String(dataNum),
+        "apply": false
     }
     dataUser.dataCst[preid] = v;
 }
@@ -110,11 +110,12 @@ function updateLS() {
 }
 
 function checkTimeVacina(time, apply) {
+    let timeDt = new Date(Number(time));
     if (apply == true) {
         return "tvApliced";
     } else {
-        if (date() > time) {
-            if (date().setDate(date().getDate() + 6) > time) {
+        if (date() < timeDt) {
+            if (date().setDate(date().getDate() + 6) > timeDt) {
                 return "tvProximo";
             } else {
                 return "tvWaiting";
