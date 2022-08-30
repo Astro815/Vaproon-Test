@@ -1,3 +1,0 @@
-isPag = "pVt";
-
-tickSlotVac();
