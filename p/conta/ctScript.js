@@ -7,15 +7,7 @@ function tickUser() {
 }
 
 qs("#impPfl").addEventListener('change', function() {
-    var file = new FileReader();
-    file.onload = () => {
-        if (confirm("Você tem certeza que quer importar essa conta?\nA conta atual será substituida e você perderá seus dados.")) {
-            dataUser = JSON.parse(file.result);
-            updateLS();
-        }
-    }
-    file.readAsText(this.files[0]);
-    window.open('./contaPag.html', 'dpl')
+    importAccount();
 });
 
 function exportAccount() {

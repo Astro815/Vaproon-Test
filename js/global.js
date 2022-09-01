@@ -1,40 +1,17 @@
 let dataUser = {
-    "name": "Jhon",
-    "ncm": "1978-05-22",
-    "gene": "masculino",
+    "name": null,
+    "ncm": null,
+    "gene": null,
     "dackTh": false,
-    "consultas": [
-        "23",
-        "24"
-    ],
-    "dataCst": {
-        "23": {
-            "name": "CoronaVac",
-            "data": "12/5/2023",
-            "desc": "ir as 9 da manhã",
-            "id": "23",
-            "dtNum": "123",
-            "apply": false
-        },
-        "24": {
-            "name": "Febre Amarela",
-            "data": "17/1/2024",
-            "desc": "No postinho da esquina",
-            "id": "24",
-            "dtNum": "1230085469386587",
-            "apply": false
-        }
-    }
-}
-
-if (localStorage.getItem("VPNaccount") != null) {
-    dataUser = JSON.parse(localStorage.getItem("VPNaccount"));
+    "consultas": [],
+    "dataCst": {}
 }
 
 // VARIAVEIS
 
 //let selectVac = false;
 const qs = (e) => { return document.querySelector(e); };
+let isApresent = false;
 let isPag = "null";
 let selectIsActive = false;
 let selectId = null;
@@ -65,6 +42,15 @@ let setIcon = (type) => {
         return "event";
     }
 };
+
+if (localStorage.getItem("VPNaccount") != null) {
+    dataUser = JSON.parse(localStorage.getItem("VPNaccount"));
+} else {
+    if (!isApresent) {
+        isApresent = true;
+        window.open("../../pAst/indexAst.html", "_top");
+    }
+}
 
 // FUNCTIONS //
 
@@ -173,15 +159,17 @@ function startSelect(id) {
 
 function resetAccount() {
     if (confirm("Tem certeza que quer limpar os seus dados?")) {
-        dataUser = {
+        /*dataUser = {
             "name": "Sem Nome",
             "ncm": "2000-01-01",
             "gene": "masculino",
             "dackTh": false,
             "consultas": [],
             "dataCst": {}
-        }
-        updateLS();
+        }*/
+        dataUser = null;
+        localStorage.removeItem("VPNaccount");
+        //updateLS();
         window.open('./contaPag.html', 'dpl');
     }
 }
@@ -190,6 +178,18 @@ function setDarkTheme() {
     dataUser.dackTh = !dataUser.dackTh;
     //let type = () => { if (dataUser.dackTh) { return ["whiteTh", "darkTh"]; } else { return ["darkTh", "whiteTh"]; } };
     tickTheme();
+}
+
+function importAccount() {
+    var file = new FileReader();
+    file.onload = () => {
+        if (confirm("Você tem certeza que quer importar essa conta?\nA conta atual será substituida e você perderá seus dados.")) {
+            dataUser = JSON.parse(file.result);
+            updateLS();
+        }
+    }
+    file.readAsText(qs("#impPfl").files[0]);
+    window.open('./contaPag.html', 'dpl');
 }
 
 function tickTheme() {
